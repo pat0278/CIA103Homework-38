@@ -119,6 +119,8 @@ public class TestApplication implements CommandLineRunner{
             pdtRepository.save(product);
             System.out.println("商品ID: " + product.getPdtId());
             System.out.println("商品ID: " + product.getPdtId());
+            System.out.println("商品ID: " + product.getPdtId());
+            System.out.println("商品ID: " + product.getPdtId());
 
 
             ProductOrderVO order = new ProductOrderVO();
