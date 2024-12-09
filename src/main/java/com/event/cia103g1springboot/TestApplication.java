@@ -89,8 +89,7 @@ public class TestApplication implements CommandLineRunner{
     @Transactional
     @Override
     public void run(String... args) throws Exception {
-        // 建立商品類型
-            // 建立會員
+
             MemVO mem = new MemVO();
             mem.setName("測試會員");
             mem.setMemType(1);
@@ -104,14 +103,13 @@ public class TestApplication implements CommandLineRunner{
             memRepository.save(mem);
             System.out.println("會員ID: " + mem.getMemId());
 
-            // 建立商品類型
             PdtTypeVO type = new PdtTypeVO();
             type.setPdtTypeName("測試分類");
             type.setPdtTypeDesc("測試類別描述");
             pdtTypeRepository.save(type);
             System.out.println("商品類型ID: " + type.getPdtTypeId());
 
-            // 建立商品
+
             PdtVO product = new PdtVO();
             product.setPdtName("測試商品");
             product.setPdtDesc("商品描述");
@@ -120,8 +118,9 @@ public class TestApplication implements CommandLineRunner{
             product.setPdtTypeVO(type);
             pdtRepository.save(product);
             System.out.println("商品ID: " + product.getPdtId());
+            System.out.println("商品ID: " + product.getPdtId());
 
-            // 建立訂單
+
             ProductOrderVO order = new ProductOrderVO();
             order.setMemVO(mem);  // 直接設定會員物件
             order.setOrderAmt(100);
@@ -134,7 +133,7 @@ public class TestApplication implements CommandLineRunner{
             productOrderRepository.save(order);
             System.out.println("訂單ID: " + order.getPdtOrderId());
 
-            // 建立訂單項目
+
             ProductOrderItemVO item = new ProductOrderItemVO();
             item.setPdtOrderId(order.getPdtOrderId());
             item.setPdtId(product.getPdtId());
